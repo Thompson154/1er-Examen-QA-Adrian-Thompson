@@ -42,4 +42,13 @@ public class DateutilsTest {
     }
 
 
+    @Test
+    public void day0() {
+        DateUtils dateUtils = new DateUtils();
+        String expectedResult  = "INVALID";
+        String actualResult = dateUtils.getDayOfWeek("2024-07-00");
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
+
 }
