@@ -23,8 +23,7 @@ public class PrestamoCelular {
             if(registrarPrestamo.registrarPrestamo(modelo,marca,usuario)){
                 return "El celular " + modelo + " de " + marca + " ha sido prestado a "+ usuario;
             } else {
-                return "El celular " + modelo + " o " + marca + " o "+ usuario +
-                        " no existen o no son invalidos, ingrese datos correctos";
+                return usuario + " no existe, ingrese uno valido";
             }
         }
         return "El celular " + modelo + " de " + marca + " no esta disponible";

@@ -19,25 +19,24 @@ public class DateutilsTest {
     public void testDateutils2023() {
         DateUtils dateUtils = new DateUtils();
         String expectedResult  = "TUESDAY";
-        String actualResult = dateUtils.getDayOfWeek("2023-07-11");
+        String actualResult = dateUtils.getDayOfWeek("2023-07-10");
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
 
     @Test
-    public void testDateutils2028() {
+    public void testDateutils2022() {
         DateUtils dateUtils = new DateUtils();
-        String expectedResult  = "TUESDAY";
-        String actualResult = dateUtils.getDayOfWeek("2028-07-11");
+        String expectedResult  = "MONDAY";
+        String actualResult = dateUtils.getDayOfWeek("2022-07-10");
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
-    //El metodo DateUtils solo funciona cada 5años bien delante o detras
     @Test
     public void testDateutils2033() {
         DateUtils dateUtils = new DateUtils();
         String expectedResult  = "TUESDAY";
-        String actualResult = dateUtils.getDayOfWeek("2028-07-11");
+        String actualResult = dateUtils.getDayOfWeek("2028-07-10");
         Assertions.assertEquals(expectedResult, actualResult);
     }
 

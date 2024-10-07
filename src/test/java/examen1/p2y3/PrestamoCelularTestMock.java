@@ -49,7 +49,7 @@ public class PrestamoCelularTestMock {
     }
 
     @Test
-    public void testEstaDisponibleWrongData() {
+    public void testEstaDisponibleWrongUser() {
         Mockito.when(estaDisponible.estaDisponible("iPhone 13","Apple")).thenReturn(true);
         Mockito.when(registrarPrestamo.registrarPrestamo("iPhone 14","Apple","Maria Lopez")).thenReturn(false);
 
@@ -59,7 +59,7 @@ public class PrestamoCelularTestMock {
         prestamoCelular.setEstaDisponible(estaDisponible);
         prestamoCelular.setRegistrarPrestamo(registrarPrestamo);
 
-        Assertions.assertEquals("El celular iPhone 13 o Apple o Maria Lopez no existen o no son invalidos, ingrese datos correctos",
+        Assertions.assertEquals("Maria Lopez no existe, ingrese uno valido",
                 prestamoCelular.prestamoCelular("iPhone 13","Apple","Maria Lopez"),
                 "ERROR en prestamoCelular");
 
