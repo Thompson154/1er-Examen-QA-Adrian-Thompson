@@ -10,33 +10,7 @@ public class DateutilsTest {
     public void testDateutilsToday2024() {
         DateUtils dateUtils = new DateUtils();
         String expectedResult  = "MONDAY";
-        String actualResult = dateUtils.getDayOfWeek("2024-07-10");
-        Assertions.assertEquals(expectedResult, actualResult);
-    }
-
-    //Probar con un año anterior
-    @Test
-    public void testDateutils2023() {
-        DateUtils dateUtils = new DateUtils();
-        String expectedResult  = "TUESDAY";
-        String actualResult = dateUtils.getDayOfWeek("2023-07-10");
-        Assertions.assertEquals(expectedResult, actualResult);
-    }
-
-
-    @Test
-    public void testDateutils2022() {
-        DateUtils dateUtils = new DateUtils();
-        String expectedResult  = "MONDAY";
-        String actualResult = dateUtils.getDayOfWeek("2022-07-10");
-        Assertions.assertEquals(expectedResult, actualResult);
-    }
-
-    @Test
-    public void testDateutils2033() {
-        DateUtils dateUtils = new DateUtils();
-        String expectedResult  = "TUESDAY";
-        String actualResult = dateUtils.getDayOfWeek("2028-07-10");
+        String actualResult = dateUtils.getDayOfWeek("2024-10-07");
         Assertions.assertEquals(expectedResult, actualResult);
     }
 
@@ -45,9 +19,27 @@ public class DateutilsTest {
     public void day0() {
         DateUtils dateUtils = new DateUtils();
         String expectedResult  = "INVALID";
-        String actualResult = dateUtils.getDayOfWeek("2024-07-00");
+        String actualResult = dateUtils.getDayOfWeek("2024-10-00");
         Assertions.assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void dayNegative() {
+        DateUtils dateUtils = new DateUtils();
+        String expectedResult  = "INVALID";
+        String actualResult = dateUtils.getDayOfWeek("2024--10-00");
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void otherMoth() {
+        DateUtils dateUtils = new DateUtils();
+        String expectedResult  = "INVALID";
+        String actualResult = dateUtils.getDayOfWeek("2024--14-00");
+        Assertions.assertEquals(expectedResult, actualResult);
+    }
+
+
 
 
 }
