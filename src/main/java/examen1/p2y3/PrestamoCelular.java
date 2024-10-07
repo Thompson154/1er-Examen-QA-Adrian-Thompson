@@ -21,9 +21,12 @@ public class PrestamoCelular {
     public String prestamoCelular(String modelo, String marca, String usuario){
         if(estaDisponible.estaDisponible(modelo,marca)){
             if(registrarPrestamo.registrarPrestamo(modelo,marca,usuario)){
-                return "El celular" + modelo + " de " + marca + " ha sido prestado a "+ usuario;
+                return "El celular " + modelo + " de " + marca + " ha sido prestado a "+ usuario;
+            } else {
+                return "El celular " + modelo + " o " + marca + " o "+ usuario +
+                        " no existen o no son invalidos, ingrese datos correctos";
             }
         }
-        return "El celular" + modelo + " de " + marca + " no esta disponible";
+        return "El celular " + modelo + " de " + marca + " no esta disponible";
     }
 }
