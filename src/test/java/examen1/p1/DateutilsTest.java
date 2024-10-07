@@ -35,11 +35,9 @@ public class DateutilsTest {
     public void otherMoth() {
         DateUtils dateUtils = new DateUtils();
         String expectedResult  = "INVALID";
-        String actualResult = dateUtils.getDayOfWeek("2024--14-00");
+        String actualResult = dateUtils.getDayOfWeek("2024-14-00");
         Assertions.assertEquals(expectedResult, actualResult);
     }
-
-
 
 
 }
